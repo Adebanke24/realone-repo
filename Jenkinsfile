@@ -2,11 +2,11 @@ pipeline {
     agent any
     environment {
         VERSION = "${env.BUILD_ID}"
-        AWS_ACCOUNT_ID= credentials('account_id')
+        AWS_ACCOUNT_ID= credentials(946861387080)
         AWS_DEFAULT_REGION="us-east-1"
-        IMAGE_REPO_NAME="image_repo"
+        IMAGE_REPO_NAME="jenkins-pipeline"
         IMAGE_TAG= "${env.BUILD_ID}"
-        REPOSITORY_URI = "775012328020.dkr.ecr.us-east-1.amazonaws.com/image_repo"
+        REPOSITORY_URI = "946861387080.dkr.ecr.us-east-1.amazonaws.com/jenkins-pipeline"
         MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED"
     }
     stages {
