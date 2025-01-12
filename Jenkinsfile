@@ -15,8 +15,7 @@ pipeline {
                 git 'https://github.com/Adebanke24/realone-repo.git'
             }
         }
-
-    }        
+      
         stage('Build with maven') {
             steps {
                 sh 'cd SampleWebApp && mvn clean install'
