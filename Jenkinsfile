@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         VERSION = "${env.BUILD_ID}"
-        AWS_ACCOUNT_ID= credentials(946861387080)
+        AWS_ACCOUNT_ID= credentials('946861387080')
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins-pipeline"
         IMAGE_TAG= "${env.BUILD_ID}"
@@ -10,6 +10,11 @@ pipeline {
         MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED"
     }
     stages {
+        stage('Git checkout') {
+            steps {
+                git 'https://github.com/Adebanke24/realone-repo.git'
+            }
+        }
         
         stage('Build with maven') {
             steps {
