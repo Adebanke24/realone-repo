@@ -27,7 +27,8 @@ pipeline {
                 sh 'cd SampleWebApp && mvn test'
             }
         
-            }      
+            }  
+        
         stage('Code Qualty Scan') {
 
            steps {
